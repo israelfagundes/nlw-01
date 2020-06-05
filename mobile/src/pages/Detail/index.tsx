@@ -12,7 +12,7 @@ interface Params {
 }
 
 interface Data {
-  point: {
+  serializedPoint: {
     image: string;
     image_url: string;
     name: string;
@@ -39,23 +39,26 @@ const Detail = () => {
       setData(res.data);
     })
   }, []);
+
+  console.log(routeParams.point_id);
+  console.log(data);
   
   function handleNavigateBack() {
     navigation.goBack();
   }
   
-  if (!data.point) {
+  if (!data.serializedPoint) {
     return null;
   }
   
   function handleWhatsApp() {
-    Linking.openURL(`whatsapp://send?phone=${data.point.whatsapp}&text=Olá! Gostaria de visitar seu estabelecimento para realizar o descarte de resíduos.`)
+    Linking.openURL(`whatsapp://send?phone=+55${data.serializedPoint.whatsapp}&text=Olá! Gostaria de visitar seu estabelecimento para realizar o descarte de resíduos.`)
   }
   
   function handleMailCompose() {
     MailComposer.composeAsync({
       subject: 'Interesse na coleta de resíduos',
-      recipients: [data.point.email],
+      recipients: [data.serializedPoint.email],
       body: `Olá! Gostaria de visitar seu estabelecimento para realizar o descarte adequado de ${data.items.map(item => item.title).join(', ')}!`
     })
   }
@@ -67,14 +70,14 @@ const Detail = () => {
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
 
-        <Image style={styles.pointImage} source={{ uri: data.point.image_url }} />
+        <Image style={styles.pointImage} source={{ uri: data.serializedPoint.image_url }} />
 
-        <Text style={styles.pointName}>{data.point.name}</Text>
+        <Text style={styles.pointName}>{data.serializedPoint.name}</Text>
         <Text style={styles.pointItems}>{data.items.map(item => item.title).join(', ')}</Text>
 
         <View style={styles.address}>
           <Text style={styles.addressTitle}>Endereço</Text>
-          <Text style={styles.addressContent}>{data.point.city}, {data.point.uf}</Text>
+          <Text style={styles.addressContent}>{data.serializedPoint.city}, {data.serializedPoint.uf}</Text>
         </View>
       </View>
       <View style={styles.footer}>
