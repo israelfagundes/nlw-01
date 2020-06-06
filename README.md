@@ -38,8 +38,7 @@ Ecoleta
 
 ## Instalação
 
-1.Antes de mais nada, com o IP local do seu computador preencha a variável `BASE_URL` no arquivo `.env`, na raiz do projeto, e a propriedade `baseURL` no arquivo `api.ts`, no diretório `mobile/src/services`.
-
+1. Antes de mais nada, com o IP local do seu computador preencha a variável `BASE_URL` no arquivo `.env`, na raiz do projeto, e a propriedade `baseURL` no arquivo `api.ts`, no diretório `mobile/src/services`.
 2. No diretório principal do repositório, instale as dependências utilizando o `yarn`, ou o seu gerenciador de pacotes preferido.
 
 ### Back-End (API)
