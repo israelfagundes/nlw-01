@@ -1,6 +1,6 @@
 <h1 align="center">
 <br>
-  <img src="github/logo.svg" alt="Ecoleta" width="300">
+  <img src="./github/logo.svg" alt="Ecoleta" width="300">
 <br>
 <br>
 Ecoleta
@@ -14,8 +14,8 @@ Ecoleta
   </a>
 </p>
 
-<div>
-  <img src="github/home.png" alt="demo-web" height="250"><img src="github/form1.png" alt="demo-web" height="250"><img src="github/form2.png" alt="demo-web" height="250"><img src="github/form3.png" alt="demo-web" height="250">
+<div align="center">
+  <img src="github/home.png" alt="demo-web" height="250"> <img src="github/form1.png" alt="demo-web" height="250"> <img src="github/form2.png" alt="demo-web" height="250"> <img src="github/form3.png" alt="demo-web" height="250">
 </div>
 
 <div align="center">
@@ -24,43 +24,46 @@ Ecoleta
 
 <hr />
 
-## Features
+## :rocket: Tecnologias
 
-This app features all the latest tools and practices in mobile development!
+### Esse app foi desenvolvido com:
 
-- ⚛️ **React Js** — A JavaScript library for building user interfaces
-- ⚛️ **React Native** — A lib that provides a way to create native apps for Android and iOS
-- 💹 **Node Js** — A web framework for Node Js
-- 📄 **MongoDB** — A cross-platform and open-source document-oriented database
-- ♻️ **Socket IO** — A library for realtime web applications 
+- :memo: **Typescript**
+- ⚛️ **React Js**
+- ⚛️ **React Native com expo**
+- :round_pushpin:	**React-Leaflet**
+- 💹 **Node Js com express**
+- 📄 **SQLite3**
+- ♻️ **Knex**
 
-## Getting started
+## Instalação
 
-1. Clone this repo using `git clone git@github.com:CarlosLevir/tindev.git`
-2. Move yourself to the appropriate directory: `cd tindev`<br />
-3. Run `yarn` to install dependencies<br />
-4. Run `lerna bootstrap` to install the packages dependecies
+1.Antes de mais nada, com o IP local do seu computador preencha a variável `BASE_URL` no arquivo `.env`, na raiz do projeto, e a propriedade `baseURL` no arquivo `api.ts`, no diretório `mobile/src/services`.
+2. No diretório principal do repositório, instale as dependências utilizando o `yarn`, ou o seu gerenciador de pacotes preferido.
 
-### Getting started with the backend server
+### Back-End (API)
 
-1. Move yourself to the backend folder: `cd backend`
-2. Create a `.env` file and add the MongoDB url connection in MONGO_URL field
-3. Run `yarn dev` to start the server
+1. No diretório principal do repositório, rode: `cd server`
+2. Instale as dependências utilizando o `yarn`, ou o seu gerenciador de pacotes preferido.
+3. Rode os comandos `yarn knex:migrate` e `yarn knex:seed`
+4. Rode o comando `yarn dev`
 
-### Getting started with the frontend app
+### Front-End
 
-1. Move yourself to the frontend folder: `cd frontend`
-2. Run `yarn start` to start the web application
+1. No diretório principal do repositório, rode: `cd web`
+2. Instale as dependências utilizando o `yarn`, ou o seu gerenciador de pacotes preferido.
+3. Rode o comando `yarn start` para iniciar a aplicação web
 
-### Getting started with the mobile app
+### Mobile
 
-1. Move yourself to the mobile folder: `cd mobile`
-2. Run `react-native run-ios` (or `run-android` if your prefer) to start the mobile app
-
-Note: If you choose to start the mobile app in the android emulator, you will have to start the emulator before using
-the `run-android` command.
-
+1. No diretório principal do repositório, rode: `cd mobile`
+2. Instale as dependências utilizando o `yarn`, ou o seu gerenciador de pacotes preferido.
+3. Rode o comando `yarn start` para iniciar o Expo.
+4. No seu smartphone, instale o aplicativo `Expo`, da sua loja de aplicativos.
+5. No aplicativo, escaneie o QR code gerado no Expo Developer Tools/terminal.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](https://opensource.org/licenses/MIT) page for details.
+
+###### Developed on Next Level Week from [RocketSeat](https://rocketseat.com.br) :rocket:
